@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button (click)="openMenu()" autoHide="true"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Notifications</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!--input of our component-->
+  <!--output of the component-->
+  <app-list-item [inventories]="inventories$ | async" (goToInventory)="goToInventory($event)">
+
+    </app-list-item>
+  <!-- <ion-list>
+    <io-item
+    *ngFor="let inventory of inventories$ | async"
+    (click)="goToInventory(inventory.id)"
+    >
+      <ion-thumbnail slot="start">
+        <ion-img [src]="inventory.imageUrl"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ inventory.name }}</h2>
+        <p>Quantity: {{ inventory.quantity }}</p>
+        <p>Price: {{inventory.price.toFixed(2) }}</p>
+      </ion-label>
+    </io-item>
+  </ion-list> -->
+</ion-content>
